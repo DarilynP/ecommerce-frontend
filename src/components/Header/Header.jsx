@@ -10,11 +10,22 @@ function Header() {
 
       <nav className="header__nav">
         <Link to="/" className="header__link">Home</Link>
-        <Link to="/shop-men" className="header__link"> Men</Link>
-        <Link to="/shop-women" className="header__link"> Women</Link>
+        <Link to="/shop-men" className="header__link">Men</Link>
+        <Link to="/shop-women" className="header__link">Women</Link>
       </nav>
 
-      <div className="header__icons">
+      <div className="header__right">
+        {/* Search bar */}
+        <div className="header__search">
+          <input
+            type="text"
+            placeholder="Search products..."
+            className="header__search-input"
+          />
+          <button className="header__search-btn">Search</button>
+        </div>
+
+        {/* Icons */}
         <Link to="/favorites" className="header__icon-link">
           <img src={LikeIcon} alt="Favorites" className="header__icon" />
         </Link>

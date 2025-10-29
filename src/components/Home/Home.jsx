@@ -7,7 +7,6 @@ import urbanshirt from "../../assets/images/urban_shirts.png";
 import shirts from "../../assets/images/shirts.png";
 import "./Home.css";
 
-
 function Home() {
   return (
     <section className="home">

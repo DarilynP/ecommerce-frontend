@@ -11,8 +11,7 @@
   }
   
   .home__banner-img {
-    width: 100%;
-    height: 100%;
+    
     object-fit: cover;
   }
   
@@ -159,6 +158,39 @@
     font-size: 1.1rem;
     font-weight: 600;
     color: #222;
+  }
+  
+  /* Search bar inside hero */
+.home__search {
+    position: absolute;
+    bottom: 40px; /* adjust distance from bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+  }
+  
+  .home__search-input {
+    padding: 12px 20px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    width: 300px;
+    outline: none;
+  }
+  
+  .home__search-btn {
+    padding: 12px 20px;
+    border-radius: 25px;
+    border: none;
+    background-color: #df4300;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  
+  .home__search-btn:hover {
+    background-color: #b93200;
   }
   
   /* Responsive for smaller screens */
