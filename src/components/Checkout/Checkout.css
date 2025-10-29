@@ -1,0 +1,28 @@
+.checkout {
+    padding: 80px 20px;
+    text-align: center;
+  }
+  
+  .checkout__form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 300px;
+    margin: 0 auto;
+  }
+  
+  .checkout__form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .checkout__form button {
+    background-color: #df4300;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  

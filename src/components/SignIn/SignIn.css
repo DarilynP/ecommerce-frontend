@@ -1,0 +1,116 @@
+.signin-page {
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Header */
+  .signin-page__header {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  }
+  
+  .signin-page__logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+  }
+  
+  .btn--signup {
+    background-color: #df4300;
+    color: #fff;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+  }
+  
+  .btn--signup:hover {
+    background-color: #b93200;
+  }
+  
+  /* Main content */
+  .signin-page__content {
+    width: 100%;
+    max-width: 400px;
+    margin-top: 50px;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  
+  .signin-page__title {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    color: #222;
+  }
+  
+  /* Social login buttons */
+  .signin-page__social p {
+    margin-bottom: 10px;
+    color: #555;
+  }
+  
+  .btn--google, .btn--twitter {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #fff;
+  }
+  
+  .btn--google { background-color: #4285F4; }
+  .btn--google:hover { background-color: #357ae8; }
+  
+  .btn--twitter { background-color: #1DA1F2; }
+  .btn--twitter:hover { background-color: #0d95e8; }
+  
+  /* Divider */
+  .signin-page__divider {
+    margin: 20px 0;
+    font-size: 0.9rem;
+    color: #999;
+  }
+  
+  /* Email/password form */
+  .signin-page__form input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+  
+  .btn--primary {
+    width: 100%;
+    padding: 12px;
+    border-radius: 25px;
+    border: none;
+    background-color: #df4300;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .btn--primary:hover {
+    background-color: #b93200;
+  }
+  
