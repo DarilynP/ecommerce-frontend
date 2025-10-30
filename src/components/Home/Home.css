@@ -1,235 +1,234 @@
 .home {
-    font-family: "Core Sans C", sans-serif;
-  }
-  
-  /* Hero banner */
-  .home__banner {
-    position: relative;
-    width: 100%;
-    height: 500px;
-    overflow: hidden;
-  }
-  
-  .home__banner-img {
-    
-    object-fit: cover;
-  }
-  
-  /* Hero text */
-  .hero_text {
-    position: absolute;
-    top: 50%;
-    left: 10%;
-    transform: translateY(-50%);
-    color: #fff;
-    z-index: 10;
-  }
-  
-  .hero_text h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-  }
-  
-  .hero_text p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-  }
-  
-  .home__btn {
-    background-color: white;
-    color: black;
-    border: none;
-    padding: 12px 30px;
-    border-radius: 15px;
-    font-size: 1rem;
-    cursor: pointer;
-    width: 250px;
-    height: 60px;
-    font-weight: 600;
-  }
-  
-  .home__btn:hover {
-    background-color: #b93200;
-    color: #fff;
-  }
-  
-  /* Images row under banner */
-  .home__images {
-    display: flex;
-    justify-content: center; /* centers the row */
-    gap: 20px;               /* space between images */
-    padding: 50px 20px;
-    flex-wrap: nowrap;       /* ensures they stay in one row */
-  }
-  
-  /* Individual image card */
-  .home__image-card {
-    position: relative;
-    width: 600px;
-    height: 350px;
-    border-radius: 12px;
-    overflow: hidden;
-    cursor: pointer;
-  }
-  
-  /* Image inside card */
-  .home__picture {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-  
-  /* Overlay text centered on image */
-  .home__image-text {
-    position: absolute;
-    top: 50%;       
-    left: 50%;      
-    transform: translate(-50%, -50%);
-    color: #fff;
-    font-size: 1.8rem;
-    font-weight: 700;
-    text-align: center;
-    text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
-    z-index: 2;
-    padding: 0 15px;
-  }
-  
-  /* Gradient overlay for text readability */
-  .home__image-card::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-  
-  /* Hover effect */
-  .home__image-card:hover .home__image-text {
-    color: #df4300;
-    transition: 0.3s;
-  }
-  /* New Arrivals Section */
+  font-family: "Core Sans C", sans-serif;
+}
+
+/* Hero banner */
+.home__banner {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+.home__banner-img {
+  width: 100%;
+  height: 100%; /* take full height of the banner container */
+  object-fit: cover;
+  display: block; /* ensures no extra space below */
+}
+
+/* Hero text */
+.hero_text {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  color: #fff;
+  z-index: 10;
+}
+
+.hero_text h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero_text p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.home__btn {
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 250px;
+  height: 60px;
+  font-weight: 600;
+}
+
+.home__btn:hover {
+  background-color: #b93200;
+  color: #fff;
+}
+
+/* Images row under banner */
+.home__images {
+  display: flex;
+  justify-content: center; /* centers the row */
+  gap: 20px; /* space between images */
+  padding: 50px 20px;
+  flex-wrap: nowrap; /* ensures they stay in one row */
+}
+
+/* Individual image card */
+.home__image-card {
+  position: relative;
+  width: 600px;
+  height: 350px;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* Image inside card */
+.home__picture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Overlay text centered on image */
+.home__image-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+  z-index: 2;
+  padding: 0 15px;
+}
+
+/* Gradient overlay for text readability */
+.home__image-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Hover effect */
+.home__image-card:hover .home__image-text {
+  color: #df4300;
+  transition: 0.3s;
+}
+/* New Arrivals Section */
 .home__new-arrivals {
-    padding: 80px 20px;
-    text-align: center;
-  }
-  
-  .section-title {
-    font-size: 2.5rem;
-    margin-bottom: 50px;
-    font-weight: 700;
-  }
-  
-  /* Grid of 4 items */
-  .new-arrivals__grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-    justify-items: center;
-  }
-  
-  /* Each product item */
-  .new-arrival__item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    cursor: pointer;
-  }
-  
-  .new-arrival__img {
-    width: 100%;
-    max-width: 300px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 12px;
-    transition: transform 0.3s;
-  }
-  
-  .new-arrival__img:hover {
-    transform: scale(1.05);
-  }
-  
-  .new-arrival__text {
-    margin-top: 15px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #222;
-  }
-  
-  /* Search bar inside hero */
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  font-weight: 700;
+}
+
+/* Grid of 4 items */
+.new-arrivals__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  justify-items: center;
+}
+
+/* Each product item */
+.new-arrival__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.new-arrival__img {
+  width: 100%;
+  max-width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s;
+}
+
+.new-arrival__img:hover {
+  transform: scale(1.05);
+}
+
+.new-arrival__text {
+  margin-top: 15px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #222;
+}
+
+/* Search bar inside hero */
 .home__search {
-    position: absolute;
-    bottom: 40px; /* adjust distance from bottom */
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-    z-index: 10;
+  position: absolute;
+  bottom: 40px; /* adjust distance from bottom */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.home__search-input {
+  padding: 12px 20px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  width: 300px;
+  outline: none;
+}
+
+.home__search-btn {
+  padding: 12px 20px;
+  border-radius: 25px;
+  border: none;
+  background-color: #df4300;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.home__search-btn:hover {
+  background-color: #b93200;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 1024px) {
+  .new-arrivals__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
-  
-  .home__search-input {
-    padding: 12px 20px;
-    border-radius: 25px;
-    border: 1px solid #ccc;
+}
+
+@media (max-width: 768px) {
+  .new-arrivals__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .home__image-card {
+    width: 45%;
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .home__images {
+    flex-direction: row; /* still row */
+    gap: 15px;
+    overflow-x: auto; /* allow horizontal scroll on very small screens */
+  }
+
+  .home__image-card {
     width: 300px;
-    outline: none;
+    height: 200px;
   }
-  
-  .home__search-btn {
-    padding: 12px 20px;
-    border-radius: 25px;
-    border: none;
-    background-color: #df4300;
-    color: #fff;
-    cursor: pointer;
-    font-weight: 600;
+
+  .home__image-text {
+    font-size: 1.2rem;
   }
-  
-  .home__search-btn:hover {
-    background-color: #b93200;
-  }
-  
-  /* Responsive for smaller screens */
-  @media (max-width: 1024px) {
-    .new-arrivals__grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .new-arrivals__grid {
-      grid-template-columns: 1fr;
-    }
-  }
-  
-  
-  /* Responsive adjustments */
-  @media (max-width: 1024px) {
-    .home__image-card {
-      width: 45%;
-      height: 250px;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .home__images {
-      flex-direction: row;  /* still row */
-      gap: 15px;
-      overflow-x: auto;     /* allow horizontal scroll on very small screens */
-    }
-  
-    .home__image-card {
-      width: 300px;
-      height: 200px;
-    }
-  
-    .home__image-text {
-      font-size: 1.2rem;
-    }
-  }
-  
+}

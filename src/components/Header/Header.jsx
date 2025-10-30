@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import "./Header.css";
 import LikeIcon from "../../assets/images/heart.png";
 import CartIcon from "../../assets/images/shopping_cart.png";
+import UserIcon from "../../assets/images/user.png"; 
 
 function Header() {
   return (
@@ -19,16 +20,20 @@ function Header() {
         <div className="header__search">
           <input
             type="text"
-            placeholder="Search products..."
+            placeholder="Search"
             className="header__search-input"
           />
-          <button className="header__search-btn">Search</button>
         </div>
 
         {/* Icons */}
+        <Link to="/signin" className="header__icon-link">
+          <img src={UserIcon} alt="Login / Account" className="header__icon" />
+        </Link>
+
         <Link to="/favorites" className="header__icon-link">
           <img src={LikeIcon} alt="Favorites" className="header__icon" />
         </Link>
+
         <Link to="/cart" className="header__icon-link">
           <img src={CartIcon} alt="Cart" className="header__icon" />
         </Link>

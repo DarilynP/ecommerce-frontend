@@ -1,35 +1,44 @@
+import SignInHeader from "./SignInHeader";
+import signinbanner from "../../assets/images/signinbanner.png";
 import "./SignIn.css";
 
 function SignIn() {
   return (
     <section className="signin-page">
-      {/* Header */}
-      <header className="signin-page__header">
-        <div className="signin-page__logo">Euphoria</div>
-        <div className="signin-page__actions">
-          <button className="btn btn--signup">Sign Up</button>
-        </div>
-      </header>
-
-      {/* Main content */}
       <div className="signin-page__content">
-        <h2 className="signin-page__title">Sign In</h2>
+        {/* Header */}
+        <SignInHeader />
 
-        {/* Social login */}
-        <div className="signin-page__social">
-          <p>Sign in with Google or Twitter:</p>
-          <button className="btn btn--google">Google</button>
-          <button className="btn btn--twitter">Twitter</button>
+        {/* Body: image + form side by side */}
+        <div className="signin-page__body">
+          {/* Left: Image */}
+          <div className="signin-page__image">
+            <img src={signinbanner} alt="Fashion collection" />
+          </div>
+
+          {/* Right: Sign-in form */}
+          <div className="signin-page__main">
+            <h2 className="signin-page__title">Sign In</h2>
+
+            <div className="signin-page__social">
+              {/* <p>Sign in with Google or Twitter:</p> */}
+              <div className="signin-page__social-buttons">
+                <button className="btn btn--google"> Continue with Google</button>
+                <button className="btn btn--twitter">Contiue with Twitter</button>
+              </div>
+            </div>
+
+            <div className="signin-page__divider">or</div>
+
+            <form className="signin-page__form">
+              <input type="text" placeholder="Username or Email" required />
+              <input type="password" placeholder="Password" required />
+              <button type="submit" className="btn btn--primary">
+                Sign In
+              </button>
+            </form>
+          </div>
         </div>
-
-        <div className="signin-page__divider">or</div>
-
-        {/* Email/Password form */}
-        <form className="signin-page__form">
-          <input type="text" placeholder="Username or Email" required />
-          <input type="password" placeholder="Password" required />
-          <button type="submit" className="btn btn--primary">Sign In</button>
-        </form>
       </div>
     </section>
   );

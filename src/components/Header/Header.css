@@ -1,37 +1,114 @@
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100px;
-    padding: 0 40px;
-    background-color: #fff;
-    
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-  
-  .header__logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #000;
-  }
-  
-  .header__nav {
-    display: flex;
-    gap: 25px;
-    font-family: "Cautsen",sans-serif;
-    font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  background-color: white;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+}
 
+/* Navigation links */
+.header__nav {
+  display: flex;
+  gap: 20px;
+}
+
+.header__link {
+  text-decoration: none;
+  color: #222;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.header__link:hover {
+  color: #df4300;
+}
+
+/* Right side container */
+.header__right {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* space between search bar and icons */
+}
+
+/* Search bar */
+.header__search {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.header__search-input {
+  padding: 8px 15px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  outline: none;
+  width: 180px;
+  font-size: 0.95rem;
+}
+
+/* Icons */
+.header__icon-link {
+  display: flex;
+  align-items: center;
+}
+
+.header__icon {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+.header__right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
   }
   
-  .header__link {
-    color: #333;
-    text-decoration: none;
-    font-weight: 500;
+  .header__icon-link {
+    display: flex;
+    align-items: center;
   }
   
-  .header__link:hover {
-    color: #df4300;
+  .header__icon {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
   }
   
+  .header__icon:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+  
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    height: auto;
+    padding: 10px 20px;
+  }
+
+  .header__nav {
+    margin: 10px 0;
+    gap: 15px;
+  }
+
+  .header__right {
+    gap: 10px;
+  }
+
+  .header__search-input {
+    width: 120px;
+    padding: 6px 10px;
+    font-size: 0.9rem;
+  }
+
+  .header__icon {
+    width: 22px;
+    height: 22px;
+  }
+}
