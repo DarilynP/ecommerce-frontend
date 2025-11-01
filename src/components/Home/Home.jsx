@@ -15,7 +15,10 @@ function Home() {
         <img src={herobanner} alt="Hero Banner" className="home__banner-img" />
         <div className="hero_text">
           <h1>T-Shirt / Tops</h1>
-          <p>Summer Value Pack</p>
+          <p>
+            Summer <br />Value Pack
+          </p>
+          <h2>cool / colorful / comfy</h2>
           <button className="home__btn">Shop Now</button>
         </div>
       </div>
@@ -41,7 +44,7 @@ function Home() {
         </div>
       </div>
 
-      {/* New Arrivals Section - separate from images row */}
+      {/* New Arrivals Section */}
       <section className="home__new-arrivals">
         <h2 className="section-title">New Arrival</h2>
         <div className="new-arrivals__grid">

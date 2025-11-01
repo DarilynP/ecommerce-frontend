@@ -1,11 +1,13 @@
-/* Page layout */
+/* ------------------ PAGE LAYOUT ------------------ */
 .product-list-page {
     display: flex;
-    min-height: 100vh; /* full page height */
-    background-color: #fafafa;
+    min-height: 100vh;
+    background-color: #ffffff;
+    font-family: "Core Sans C", sans-serif;
+    padding-top: 80px;
   }
   
-  /* Sidebar (full height, seamless) */
+  /* ------------------ SIDEBAR ------------------ */
   .product-list__sidebar {
     width: 260px;
     background: #fff;
@@ -14,40 +16,82 @@
     flex-direction: column;
     gap: 30px;
     border-right: 1px solid #eee;
-    box-shadow: inset -1px 0 0 rgba(0,0,0,0.05);
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.05);
   }
   
-  /* Sidebar header */
-  .product-list__sidebar h3 {
-    font-size: 1.3rem;
+  .sidebar-title {
+    font-size: 1.6rem;
     margin-bottom: 10px;
-  }
-  
-  /* Filter groups */
-  .filter-group p {
     font-weight: bold;
-    margin-bottom: 8px;
+    color: #222;
   }
   
-  .filter-group ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  /* ------------------ FILTER GROUPS ------------------ */
+  .filter-group {
+    margin-bottom: 1.5rem;
   }
   
-  .filter-group li {
-    padding: 6px 0;
+  .filter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     cursor: pointer;
-    font-size: 0.95rem;
-    color: #333;
-    transition: color 0.2s;
+    transition: color 0.2s ease;
   }
   
-  .filter-group li:hover {
+  .filter-header p {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #222;
+  }
+  
+  .filter-header:hover p {
     color: #df4300;
   }
   
-  /* Sizes horizontal */
+  .arrow {
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+    color: #555;
+  }
+  
+  /* When section is open */
+  .filter-group.open .arrow {
+    transform: rotate(180deg);
+  }
+  
+  /* ------------------ LIST STYLES ------------------ */
+  .filter-group ul {
+    list-style: none;
+    padding: 0;
+    margin: 8px 0 0;
+    animation: fadeIn 0.3s ease;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-5px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .filter-group ul li {
+    padding: 6px 0;
+    cursor: pointer;
+    font-size: 15px;
+    color: #333;
+    transition: color 0.2s ease;
+  }
+  
+  .filter-group ul li:hover {
+    color: #df4300;
+  }
+  
+  /* ------------------ SIZE FILTER ------------------ */
   .size-list {
     display: flex;
     flex-wrap: wrap;
@@ -56,28 +100,79 @@
   
   .size-list li {
     border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 5px 10px;
-    font-size: 0.85rem;
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 15px;
     text-align: center;
-  }
-  
-  /* Colors as circles */
-  .color-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-  
-  .color-circle {
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    border: 1px solid #ccc;
+    transition: all 0.2s ease;
     cursor: pointer;
   }
   
-  /* Main content */
+  .size-list li:hover {
+    background-color: #eee;
+    color: #df4300;
+    border-color: #df4300;
+  }
+  
+  /* ------------------ DRESS STYLE FILTER ------------------ */
+  .filter-group ul li {
+    padding: 6px 0;
+    font-size: 15px;
+  }
+  
+  .filter-group ul li:hover {
+    color: #df4300;
+  }
+  
+  /* ------------------ COLOR FILTER ------------------ */
+  .color-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .color-circle {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    cursor: pointer;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+  
+  .color-circle:hover {
+    transform: scale(1.15);
+    border-color: #000;
+  }
+  
+  .color-circle.active {
+    border-color: #df4300;
+    box-shadow: 0 0 5px rgba(223, 67, 0, 0.4);
+  }
+  
+  /* ------------------ PRICE RANGE ------------------ */
+  .price-range {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+  
+  .price-slider {
+    width: 100%;
+    cursor: pointer;
+    accent-color: #df4300;
+  }
+  
+  .price-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: #333;
+  }
+  
+  /* ------------------ MAIN CONTENT ------------------ */
   .product-list__main {
     flex: 1;
     padding: 30px;
@@ -86,12 +181,17 @@
     gap: 25px;
   }
   
-  /* Header and tabs */
+  /* ------------------ HEADER & TABS ------------------ */
   .product-list__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+  }
+  
+  .product-list__header h2 {
+    font-size: 2rem;
+    color: #222;
   }
   
   .product-list__tabs .tab-btn {
@@ -102,13 +202,16 @@
     cursor: pointer;
     font-weight: bold;
     color: #555;
+    transition: color 0.2s ease, background-color 0.2s ease;
+    border-radius: 6px;
   }
   
   .product-list__tabs .tab-btn:hover {
-    color: #df4300;
+    color: #fff;
+    background-color: #df4300;
   }
   
-  /* Product grid */
+  /* ------------------ PRODUCT GRID ------------------ */
   .product-list__grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -123,19 +226,36 @@
     padding: 15px;
     text-decoration: none;
     color: #222;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
   .product-card:hover {
     transform: scale(1.03);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
-  /* Needs Help Section */
-.needs-help {
+  
+  .product-card img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .product-card h3 {
+    font-size: 1.1rem;
+    margin: 10px 0 4px;
+  }
+  
+  .product-card p {
+    color: #df4300;
+    font-weight: bold;
+  }
+  
+  /* ------------------ NEEDS HELP SECTION ------------------ */
+  .needs-help {
     margin-top: 50px;
     padding: 30px;
     background: #fff;
     border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     text-align: left;
   }
   
@@ -156,7 +276,7 @@
     cursor: pointer;
     font-size: 1rem;
     color: #555;
-    transition: color 0.2s;
+    transition: color 0.2s ease;
   }
   
   .needs-help li:hover {
