@@ -1,32 +1,165 @@
-.product-list {
-    padding: 60px;
+/* Page layout */
+.product-list-page {
+    display: flex;
+    min-height: 100vh; /* full page height */
     background-color: #fafafa;
   }
   
-  .product-list__title {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 40px;
+  /* Sidebar (full height, seamless) */
+  .product-list__sidebar {
+    width: 260px;
+    background: #fff;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    border-right: 1px solid #eee;
+    box-shadow: inset -1px 0 0 rgba(0,0,0,0.05);
   }
   
+  /* Sidebar header */
+  .product-list__sidebar h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+  
+  /* Filter groups */
+  .filter-group p {
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  .filter-group ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .filter-group li {
+    padding: 6px 0;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: #333;
+    transition: color 0.2s;
+  }
+  
+  .filter-group li:hover {
+    color: #df4300;
+  }
+  
+  /* Sizes horizontal */
+  .size-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .size-list li {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-size: 0.85rem;
+    text-align: center;
+  }
+  
+  /* Colors as circles */
+  .color-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .color-circle {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    cursor: pointer;
+  }
+  
+  /* Main content */
+  .product-list__main {
+    flex: 1;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+  
+  /* Header and tabs */
+  .product-list__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .product-list__tabs .tab-btn {
+    background: none;
+    border: none;
+    padding: 8px 16px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .product-list__tabs .tab-btn:hover {
+    color: #df4300;
+  }
+  
+  /* Product grid */
   .product-list__grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 30px;
+    gap: 25px;
   }
   
   .product-card {
     background: #fff;
     border-radius: 12px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     text-align: center;
     padding: 15px;
     text-decoration: none;
     color: #222;
+    transition: transform 0.3s ease;
   }
   
   .product-card:hover {
-    transform: scale(1.02);
-    transition: 0.3s ease;
+    transform: scale(1.03);
+  }
+  /* Needs Help Section */
+.needs-help {
+    margin-top: 50px;
+    padding: 30px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    text-align: left;
+  }
+  
+  .needs-help h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+  }
+  
+  .needs-help ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+  }
+  
+  .needs-help li {
+    cursor: pointer;
+    font-size: 1rem;
+    color: #555;
+    transition: color 0.2s;
+  }
+  
+  .needs-help li:hover {
+    color: #df4300;
   }
   
