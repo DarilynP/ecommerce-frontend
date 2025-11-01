@@ -1,31 +1,100 @@
 .product-detail {
     display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    padding: 60px;
-  }
-  
-  .product-detail img {
-    width: 400px;
-    border-radius: 10px;
+    gap: 50px;
+    align-items: flex-start;
+    margin: 50px auto;
+    max-width: 1200px;
+    padding: 0 20px;
   }
   
   .product-detail__info {
-    max-width: 500px;
+    flex: 1;
+  }
+  
+  .product-detail__image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  
+  .product-detail__main-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .product-detail__title {
+    font-size: 2rem;
+    margin-bottom: 10px;
   }
   
   .product-detail__price {
     font-size: 1.5rem;
     color: #df4300;
-    margin: 10px 0;
+    margin-bottom: 20px;
+  }
+  
+  .product-detail__sizes {
+    margin-bottom: 15px;
+  }
+  
+  .product-detail__size-select {
+    margin-left: 10px;
+    padding: 5px;
+  }
+  
+  .product-detail__colors {
+    margin-bottom: 15px;
+  }
+  
+  .product-detail__color-options {
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+    margin: 5px 0;
+  }
+  
+  .product-detail__color-swatch {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    cursor: pointer;
+  }
+  
+  .product-detail__color-swatch--selected {
+    outline: 2px solid #df4300;
   }
   
   .product-detail__btn {
-    background-color: #df4300;
-    color: white;
-    border: none;
+    margin-top: 15px;
     padding: 10px 20px;
-    border-radius: 20px;
+    background-color: #df4300;
+    color: #fff;
+    border: none;
     cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+  }
+  
+  .product-detail__description {
+    margin-top: 30px;
+  }
+  
+  .product-detail__description h2 {
+    margin-bottom: 10px;
+  }
+  
+  /* Responsive: stack columns on small screens */
+  @media (max-width: 768px) {
+    .product-detail {
+      flex-direction: column;
+    }
+  
+    .product-detail__image {
+      margin-top: 20px;
+    }
   }
   
