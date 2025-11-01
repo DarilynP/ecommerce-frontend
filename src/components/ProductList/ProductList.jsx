@@ -8,7 +8,7 @@ function ProductList({ category }) {
     ? products.filter((p) => p.gender === category)
     : products;
 
-  // Filter data
+  // Filters
   const clothingItems = ["Jackets", "T-Shirts", "Hoodies", "Shirts"];
   const sizes = ["XS", "S", "M", "L", "XL", "XXL"];
   const dressStyles = ["Casual", "Formal", "Party", "Summer", "Vintage"];
@@ -27,7 +27,6 @@ function ProductList({ category }) {
     "#964B00",
   ];
 
-  // State for collapsible filters
   const [openSections, setOpenSections] = useState({
     clothing: true,
     size: true,
@@ -144,14 +143,32 @@ function ProductList({ category }) {
 
       {/* Main Product Area */}
       <div className="product-list__main">
-        <div className="product-list__header">
-          <h2>Women’s Clothing</h2>
-          <div className="product-list__tabs">
-            <button className="tab-btn">News</button>
-            <button className="tab-btn">Recommend</button>
+        {/* Breadcrumb + Sort Bar */}
+        <div className="product-list__top">
+          <p className="breadcrumb">
+            Home / <span>Women</span> / <span>New Arrivals</span>
+          </p>
+          <div className="sort-options">
+            <label htmlFor="sort">Sort by:</label>
+            <select id="sort" name="sort">
+              <option value="recommended">Recommended</option>
+              <option value="new">Newest</option>
+              <option value="priceLow">Price: Low to High</option>
+              <option value="priceHigh">Price: High to Low</option>
+            </select>
           </div>
         </div>
 
+        {/* Title + Tabs */}
+        <div className="product-list__header">
+          <h2>Women’s Clothing</h2>
+          <div className="product-list__tabs">
+            <button className="tab-btn active">New</button>
+            <button className="tab-btn">Recommended</button>
+          </div>
+        </div>
+
+        {/* Grid */}
         <div className="product-list__grid">
           {filteredProducts.map((product) => (
             <Link
@@ -166,6 +183,7 @@ function ProductList({ category }) {
           ))}
         </div>
 
+        {/* Help Section */}
         <div className="needs-help">
           <h3>Need Help?</h3>
           <ul>
