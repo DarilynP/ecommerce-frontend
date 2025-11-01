@@ -1,25 +1,26 @@
+/* ------------------ BASE ------------------ */
 .home {
   font-family: "Core Sans C", sans-serif;
+  box-sizing: border-box;
 }
 
-/* Hero banner */
+/* ------------------ HERO BANNER ------------------ */
 .home__banner {
   position: relative;
   width: 100%;
-  height: 716px;
+  min-height: 716px;
   overflow: hidden;
-  padding-top: 80px;
+  margin-top: 90px;
 }
 
-  .home__banner-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-   
+.home__banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  object-position: top center;
 }
 
-/* Hero text */
 .hero_text {
   position: absolute;
   top: 50%;
@@ -29,24 +30,19 @@
   z-index: 10;
 }
 
-.hero_text h1 {
+.hero_text h1,
+.hero_text h2 {
   font-size: 25px;
   font-weight: 400;
   margin-bottom: 10px;
 }
-.hero_text h2 {
-  font-size: 25px;
-  font-weight: 400;
-  margin-bottom: 20px;
-}
+
 .hero_text p {
-  margin-top: 0;
   font-size: 60px;
   font-weight: 700;
-  margin-bottom: 20px;
-  line-height: 1.1; /* adjust spacing between lines */
-  max-width: 600px; /* limits width so it wraps into 2 lines */
-  word-wrap: break-word; /* ensures long words wrap */
+  line-height: 1.1;
+  max-width: 600px;
+  margin: 20px 0;
 }
 
 .home__btn {
@@ -67,16 +63,20 @@
   color: #fff;
 }
 
-/* Images row under banner */
-.home__images {
-  display: flex;
-  justify-content: center; /* centers the row */
-  gap: 20px; /* space between images */
-  padding: 50px 20px;
-  flex-wrap: nowrap; /* ensures they stay in one row */
+/* ------------------ PAGE CONTENT ------------------ */
+.page-content {
+  padding: 80px 50px;
+  box-sizing: border-box;
 }
 
-/* Individual image card */
+/* ------------------ IMAGES ROW UNDER BANNER ------------------ */
+.home__images {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
 .home__image-card {
   position: relative;
   width: 600px;
@@ -86,7 +86,6 @@
   cursor: pointer;
 }
 
-/* Image inside card */
 .home__picture {
   width: 100%;
   height: 100%;
@@ -94,7 +93,6 @@
   display: block;
 }
 
-/* Overlay text centered on image */
 .home__image-text {
   position: absolute;
   top: 50%;
@@ -109,7 +107,6 @@
   padding: 0 15px;
 }
 
-/* Gradient overlay for text readability */
 .home__image-card::after {
   content: "";
   position: absolute;
@@ -121,32 +118,25 @@
   z-index: 1;
 }
 
-/* Hover effect */
-.home__image-card:hover .home__image-text {
-  color: #df4300;
-  transition: 0.3s;
-}
-/* New Arrivals Section */
+/* ------------------ NEW ARRIVALS ------------------ */
 .home__new-arrivals {
   text-align: center;
+  margin: 80px 0;
 }
 
 .section-title {
   font-size: 2.5rem;
-  margin-bottom: 50px;
   font-weight: 700;
+  margin-bottom: 30px;
 }
 
-/* Grid of 4 items */
 .new-arrivals__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
   justify-items: center;
-  padding: 50px;
 }
 
-/* Each product item */
 .new-arrival__item {
   display: flex;
   flex-direction: column;
@@ -155,8 +145,7 @@
 }
 
 .new-arrival__img {
-  width: 100%;
-  max-width: 300px;
+  width: 300px;
   height: 300px;
   object-fit: cover;
   border-radius: 12px;
@@ -174,74 +163,139 @@
   color: #222;
 }
 
-/* Search bar inside hero */
-.home__search {
-  position: absolute;
-  bottom: 40px; /* adjust distance from bottom */
-  left: 50%;
-  transform: translateX(-50%);
+/* ------------------ FEATURED IMAGES ------------------ */
+.home__featured-images {
   display: flex;
-  gap: 10px;
-  z-index: 10;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
 }
 
-.home__search-input {
-  padding: 12px 20px;
-  border-radius: 25px;
-  border: 1px solid #ccc;
-  width: 300px;
-  outline: none;
+.home__featured-image-card {
+  position: relative;
+  width: 630px;
+  height: 640px;
+  overflow: hidden;
 }
 
-.home__search-btn {
-  padding: 12px 20px;
-  border-radius: 25px;
-  border: none;
-  background-color: #df4300;
+.home__featured-img {
+  width: 630px;
+  height: 640px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ------------------ FEATURED OVERLAY TEXT ------------------ */
+.featured__overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+
+  text-align: center; /* centers both lines */
+  z-index: 2;
+}
+
+.featured__overlay-text--bold {
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 1.2;
+  display: block;
+  margin-bottom: 20px;
+  word-wrap: break-word; /* ensures wrapping */
+}
+
+.featured__overlay-text--light {
+  font-weight: 300;
+  font-size: 20px;
+  color: #d9d9d9;
+  display: block;
+  margin-top: 5px;
+}
+
+/* ------------------ BRAND DEALS ------------------ */
+.brand__deals {
+  background-color: #3c4242;
+  padding: 80px 20px;
+  margin: 100px 0;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.brand__deals-title {
+  font-size: 40px;
+  font-weight: 700;
   color: #fff;
+}
+
+.brand__deals-subtitle {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #cccccc;
+  margin-top: 10px;
+  display: block;
+}
+
+.brand__deals-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  margin-top: 50px;
+  flex-wrap: wrap;
+}
+
+.brand__deals-img {
+  height: 80px;
+  width: 180px;
+  object-fit: contain;
   cursor: pointer;
-  font-weight: 600;
+  transition: transform 0.3s ease;
 }
 
-.home__search-btn:hover {
-  background-color: #b93200;
+.brand__deals-img:hover {
+  transform: scale(1.1);
+}.home__footer {
+  background-color: #222;
+  color: #fff;
+  padding: 60px 50px;
+  box-sizing: border-box;
 }
 
-/* Responsive for smaller screens */
-@media (max-width: 1024px) {
-  .new-arrivals__grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
+.footer__container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 
-@media (max-width: 768px) {
-  .new-arrivals__grid {
-    grid-template-columns: 1fr;
-  }
+.footer__section {
+  flex: 1 1 200px; /* grows, shrinks, min width */
 }
 
-/* Responsive adjustments */
-@media (max-width: 1024px) {
-  .home__image-card {
-    width: 45%;
-    height: 250px;
-  }
+.footer__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  text-align: left; /* align title to start */
 }
 
-@media (max-width: 768px) {
-  .home__images {
-    flex-direction: row; /* still row */
-    gap: 15px;
-    overflow-x: auto; /* allow horizontal scroll on very small screens */
-  }
+.footer__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left; /* align list items to start */
+}
 
-  .home__image-card {
-    width: 300px;
-    height: 200px;
-  }
+.footer__list li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
 
-  .home__image-text {
-    font-size: 1.2rem;
-  }
+.footer__bottom {
+  text-align: left; /* bottom copyright text aligned to start */
+  margin-top: 50px;
+  font-size: 0.9rem;
+  color: #aaa;
 }
