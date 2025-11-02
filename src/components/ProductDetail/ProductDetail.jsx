@@ -1,12 +1,18 @@
 import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
+import { useCart } from "../Cart/CartContextCart";
+
+
+
 import products from "../../data/products";
 import "./ProductDetail.css";
 
 function ProductDetail() {
   const { id } = useParams();
+  const { addToCart } = useCart(); // ✅ Access cart function from context
   const product = products.find((p) => p.id === parseInt(id));
 
+  // State for selected options and reviews
   const [selectedSize, setSelectedSize] = useState(product?.sizes[0] || "");
   const [selectedColor, setSelectedColor] = useState(product?.colors[0] || "");
   const [reviews, setReviews] = useState([
@@ -28,14 +34,26 @@ function ProductDetail() {
     setNewReview({ name: "", rating: 5, comment: "" });
   };
 
+  const handleAddToCart = () => {
+    const selectedProduct = {
+      ...product,
+      size: selectedSize,
+      color: selectedColor,
+    };
+    addToCart(selectedProduct); 
+    alert("✅ Added to cart!");
+  };
+
   return (
     <section className="product-detail-page">
       {/* ---------- TOP SECTION ---------- */}
       <div className="product-detail__container">
+        {/* Image */}
         <div className="product-detail__image">
           <img src={product.image} alt={product.name} className="product-detail__main-img" />
         </div>
 
+        {/* Info */}
         <div className="product-detail__info">
           <h1 className="product-detail__title">{product.name}</h1>
           <p className="product-detail__price">${product.price}</p>
@@ -80,8 +98,11 @@ function ProductDetail() {
             </ul>
           </div>
 
+          {/* Actions */}
           <div className="product-detail__actions">
-            <button className="btn btn--add">Add to Cart</button>
+            <button className="btn btn--add" onClick={handleAddToCart}>
+              Add to Cart
+            </button>
             <button className="btn btn--wishlist">♡ Wishlist</button>
           </div>
         </div>
@@ -94,7 +115,7 @@ function ProductDetail() {
         {/* Tabs */}
         <div className="desc-tabs">
           <button className="tab active">Description</button>
-          <button className="tab">User Comments (2)</button>
+          <button className="tab">User Comments ({reviews.length})</button>
           <button className="tab">Q&A</button>
         </div>
 

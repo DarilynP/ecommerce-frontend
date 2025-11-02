@@ -13,6 +13,8 @@ import Levis from "../../assets/images/Levis.png";
 import nike from "../../assets/images/nike.png";
 import Puma from "../../assets/images/Puma.png";
 import polo from "../../assets/images/polologo.png";
+import googleplay from "../../assets/images/googleplayicon.png";
+import appstore from "../../assets/images/appstoreicon.png";
 
 function Home() {
   return (
@@ -160,6 +162,21 @@ function Home() {
                 <li>Terms & Conditions</li>
                 <li>FAQs</li>
               </ul>
+            </div>
+          </div>
+          <div className="footer__Download">
+            <h4 className="footer__title">Download Our App</h4>
+            <div className="footer__app-icons">
+              <img
+                src={googleplay}
+                alt="Google Play Store"
+                className="footer__app-icon"
+              />
+              <img
+                src={appstore}
+                alt="Apple App Store"
+                className="footer__app-icon"
+              />
             </div>
           </div>
 

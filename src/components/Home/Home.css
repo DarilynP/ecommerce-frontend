@@ -16,9 +16,9 @@
 .home__banner-img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   display: block;
-  object-position: top center;
+  object-position: center;
 }
 
 .hero_text {
@@ -28,6 +28,7 @@
   transform: translateY(-50%);
   color: #fff;
   z-index: 10;
+  text-align: left;
 }
 
 .hero_text h1,
@@ -56,6 +57,7 @@
   width: 250px;
   height: 60px;
   font-weight: 600;
+  transition: all 0.3s ease;
 }
 
 .home__btn:hover {
@@ -84,6 +86,11 @@
   border-radius: 12px;
   overflow: hidden;
   cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.home__image-card:hover {
+  transform: scale(1.03);
 }
 
 .home__picture {
@@ -114,7 +121,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.25);
   z-index: 1;
 }
 
@@ -168,7 +175,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 
 .home__featured-image-card {
@@ -176,13 +184,19 @@
   width: 630px;
   height: 640px;
   overflow: hidden;
+  border-radius: 16px;
 }
 
 .home__featured-img {
-  width: 630px;
-  height: 640px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.4s ease;
+}
+
+.home__featured-image-card:hover .home__featured-img {
+  transform: scale(1.05);
 }
 
 /* ------------------ FEATURED OVERLAY TEXT ------------------ */
@@ -192,8 +206,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   color: #ffffff;
-
-  text-align: center; /* centers both lines */
+  text-align: center;
   z-index: 2;
 }
 
@@ -201,17 +214,13 @@
   font-weight: 700;
   font-size: 34px;
   line-height: 1.2;
-  display: block;
   margin-bottom: 20px;
-  word-wrap: break-word; /* ensures wrapping */
 }
 
 .featured__overlay-text--light {
   font-weight: 300;
   font-size: 20px;
   color: #d9d9d9;
-  display: block;
-  margin-top: 5px;
 }
 
 /* ------------------ BRAND DEALS ------------------ */
@@ -234,7 +243,6 @@
   font-weight: 400;
   color: #cccccc;
   margin-top: 10px;
-  display: block;
 }
 
 .brand__deals-logos {
@@ -256,8 +264,11 @@
 
 .brand__deals-img:hover {
   transform: scale(1.1);
-}.home__footer {
-  background-color: #222;
+}
+
+/* ------------------ FOOTER ------------------ */
+.home__footer {
+  background-color: #404040;
   color: #fff;
   padding: 60px 50px;
   box-sizing: border-box;
@@ -271,21 +282,21 @@
 }
 
 .footer__section {
-  flex: 1 1 200px; /* grows, shrinks, min width */
+  flex: 1 1 200px;
 }
 
 .footer__title {
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 15px;
-  text-align: left; /* align title to start */
+  text-align: left;
 }
 
 .footer__list {
   list-style: none;
   padding: 0;
   margin: 0;
-  text-align: left; /* align list items to start */
+  text-align: left;
 }
 
 .footer__list li {
@@ -294,8 +305,163 @@
 }
 
 .footer__bottom {
-  text-align: left; /* bottom copyright text aligned to start */
+  text-align: left;
   margin-top: 50px;
   font-size: 0.9rem;
   color: #aaa;
+}
+
+.footer__Download {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 30px;
+}
+
+.footer__Download .footer__title {
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.footer__app-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer__app-icon {
+  width: 150px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.footer__app-icon:hover {
+  transform: scale(1.05);
+}
+
+/* ------------------ RESPONSIVE ------------------ */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .hero_text p {
+    font-size: 42px;
+    max-width: 500px;
+  }
+
+  .new-arrivals__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .home__featured-image-card {
+    width: 100%;
+    height: 500px;
+  }
+
+  .featured__overlay-text--bold {
+    font-size: 28px;
+  }
+
+  .brand__deals-title {
+    font-size: 32px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hero_text {
+    left: 6%;
+  }
+
+  .hero_text h1,
+  .hero_text h2 {
+    font-size: 18px;
+  }
+
+  .hero_text p {
+    font-size: 36px;
+    max-width: 100%;
+  }
+
+  .home__btn {
+    width: 200px;
+    height: 50px;
+    font-size: 18px;
+  }
+
+  .new-arrivals__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .brand__deals-logos {
+    gap: 30px;
+  }
+
+  .footer__container {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .footer__title {
+    text-align: center;
+  }
+
+  .footer__list {
+    text-align: center;
+  }
+
+  .footer__bottom {
+    text-align: center;
+  }
+
+  .footer__app-icons {
+    justify-content: center;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .hero_text {
+    left: 5%;
+  }
+
+  .hero_text p {
+    font-size: 26px;
+  }
+
+  .new-arrivals__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home__featured-image-card {
+    height: 400px;
+  }
+
+  .featured__overlay-text--bold {
+    font-size: 22px;
+  }
+
+  .featured__overlay-text--light {
+    font-size: 16px;
+  }
+
+  .brand__deals {
+    padding: 60px 15px;
+  }
+
+  .brand__deals-img {
+    width: 130px;
+    height: 60px;
+  }
+
+  .footer__Download .footer__title {
+    font-size: 1.3rem;
+  }
+
+  .footer__app-icon {
+    width: 120px;
+  }
 }

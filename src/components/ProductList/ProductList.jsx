@@ -8,25 +8,16 @@ function ProductList({ category }) {
     ? products.filter((p) => p.gender === category)
     : products;
 
-  // Filters
+  // Filter options
   const clothingItems = ["Jackets", "T-Shirts", "Hoodies", "Shirts"];
   const sizes = ["XS", "S", "M", "L", "XL", "XXL"];
   const dressStyles = ["Casual", "Formal", "Party", "Summer", "Vintage"];
   const colors = [
-    "#000000",
-    "#ffffff",
-    "#808080",
-    "#ff0000",
-    "#ff7f50",
-    "#ffa500",
-    "#ffff00",
-    "#008000",
-    "#0000ff",
-    "#4b0082",
-    "#800080",
-    "#964B00",
+    "#000000", "#ffffff", "#808080", "#ff0000", "#ff7f50", "#ffa500",
+    "#ffff00", "#008000", "#0000ff", "#4b0082", "#800080", "#964B00",
   ];
 
+  // Section toggle
   const [openSections, setOpenSections] = useState({
     clothing: true,
     size: true,
@@ -35,26 +26,24 @@ function ProductList({ category }) {
     style: true,
   });
 
+  // Active tab
+  const [activeTab, setActiveTab] = useState("new");
+
   const toggleSection = (section) => {
     setOpenSections((prev) => ({ ...prev, [section]: !prev[section] }));
   };
 
   return (
     <section className="product-list-page">
-      {/* Sidebar */}
+      {/* ---------- SIDEBAR FILTER ---------- */}
       <aside className="product-list__sidebar">
         <h3 className="sidebar-title">Filter</h3>
 
         {/* Clothing Items */}
         <div className="filter-group">
-          <div
-            className="filter-header"
-            onClick={() => toggleSection("clothing")}
-          >
+          <div className="filter-header" onClick={() => toggleSection("clothing")}>
             <p>Clothing Items</p>
-            <span className="arrow">
-              {openSections.clothing ? "▲" : "▼"}
-            </span>
+            <span className="arrow">{openSections.clothing ? "▲" : "▼"}</span>
           </div>
           {openSections.clothing && (
             <ul>
@@ -82,10 +71,7 @@ function ProductList({ category }) {
 
         {/* Dress Style */}
         <div className="filter-group">
-          <div
-            className="filter-header"
-            onClick={() => toggleSection("style")}
-          >
+          <div className="filter-header" onClick={() => toggleSection("style")}>
             <p>Dress Style</p>
             <span className="arrow">{openSections.style ? "▲" : "▼"}</span>
           </div>
@@ -141,34 +127,32 @@ function ProductList({ category }) {
         </div>
       </aside>
 
-      {/* Main Product Area */}
+      {/* ---------- MAIN PRODUCT LIST ---------- */}
       <div className="product-list__main">
-        {/* Breadcrumb + Sort Bar */}
-        <div className="product-list__top">
-          <p className="breadcrumb">
-            Home / <span>Women</span> / <span>New Arrivals</span>
-          </p>
-          <div className="sort-options">
-            <label htmlFor="sort">Sort by:</label>
-            <select id="sort" name="sort">
-              <option value="recommended">Recommended</option>
-              <option value="new">Newest</option>
-              <option value="priceLow">Price: Low to High</option>
-              <option value="priceHigh">Price: High to Low</option>
-            </select>
-          </div>
-        </div>
-
-        {/* Title + Tabs */}
+        {/* Header: Title + Tabs */}
         <div className="product-list__header">
-          <h2>Women’s Clothing</h2>
+          <h2>
+            {category
+              ? `${category.charAt(0).toUpperCase() + category.slice(1)}’s Clothing`
+              : "All Products"}
+          </h2>
           <div className="product-list__tabs">
-            <button className="tab-btn active">New</button>
-            <button className="tab-btn">Recommended</button>
+            <button
+              className={`tab-btn ${activeTab === "new" ? "active" : ""}`}
+              onClick={() => setActiveTab("new")}
+            >
+              New
+            </button>
+            <button
+              className={`tab-btn ${activeTab === "recommended" ? "active" : ""}`}
+              onClick={() => setActiveTab("recommended")}
+            >
+              Recommended
+            </button>
           </div>
         </div>
 
-        {/* Grid */}
+        {/* Product Grid */}
         <div className="product-list__grid">
           {filteredProducts.map((product) => (
             <Link
