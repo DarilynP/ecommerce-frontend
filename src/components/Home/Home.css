@@ -134,7 +134,11 @@
 .section-title {
   font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 30px;
+  text-align: left;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  border-left: 6px solid #8a33fd;
+  padding-left: 12px; 
 }
 
 .new-arrivals__grid {
