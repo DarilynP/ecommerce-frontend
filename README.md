@@ -26,10 +26,8 @@ A sleek, fully responsive e-commerce web application built with **React** that l
 | **Version Control** | Git & GitHub |
 | **Deployment** | Netlify / Vercel (recommended) |
 
+## 🖼️ Screenshot
 
-## 🖼️ Screenshots
+![Euphoria Screenshot](https://raw.githubusercontent.com/DarilynP/ecommerce-frontend/main/src/assets/images/Screenshot.png)
 
-
-### 👗 Product List
-![Product List Page](src/assets/screenshots/ProductList.png)
 
