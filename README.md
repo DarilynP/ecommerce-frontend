@@ -26,3 +26,10 @@ A sleek, fully responsive e-commerce web application built with **React** that l
 | **Version Control** | Git & GitHub |
 | **Deployment** | Netlify / Vercel (recommended) |
 
+
+## 🖼️ Screenshots
+
+
+### 👗 Product List
+![Product List Page](src/assets/screenshots/ProductList.png)
+
